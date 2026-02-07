@@ -49,6 +49,11 @@ public class ProjectController {
     public ResponseEntity<ProjectResponse> update(@PathVariable Long id, @Valid @RequestBody ProjectRequest request) {
         return ResponseEntity.ok(projectService.updateProject(id, request));
     }
+    @GetMapping("/admin/{id}")
+    @Operation(summary = "Xem chi tiết dự án")
+    public ResponseEntity<ProjectResponse> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(projectService.getProjectById(id));
+    }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Xóa dự án (Tự động xóa sạch Media liên quan)")

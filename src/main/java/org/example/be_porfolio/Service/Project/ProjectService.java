@@ -182,4 +182,7 @@ public class ProjectService {
         project.getMediaList().addAll(mediaList);
         projectRepository.save(project);
     }
+    public long countAll() {
+        return projectRepository.count();
+    }
 }

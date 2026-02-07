@@ -6,7 +6,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.be_porfolio.DTO.TechStack.TechStackRequest;
 import org.example.be_porfolio.DTO.TechStack.TechStackResponse;
-import org.example.be_porfolio.Service.TechStack.TechStackService;
+import org.example.be_porfolio.Service.Project.TechStackService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

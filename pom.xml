@@ -134,6 +134,11 @@
             <artifactId>cloudinary-http44</artifactId>
             <version>1.33.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.analytics</groupId>
+            <artifactId>google-analytics-data</artifactId>
+            <version>0.56.0</version>
+        </dependency>
     </dependencies>
 
     <build>

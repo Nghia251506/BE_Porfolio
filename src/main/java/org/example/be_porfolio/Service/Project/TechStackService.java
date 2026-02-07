@@ -1,4 +1,4 @@
-package org.example.be_porfolio.Service.TechStack;
+package org.example.be_porfolio.Service.Project;
 
 import lombok.RequiredArgsConstructor;
 import org.example.be_porfolio.DTO.TechStack.TechStackRequest;

@@ -60,7 +60,7 @@ public class Project {
 
     // QUAN HỆ 2: QUAN HỆ VỚI MEDIA (1-N)
     // Dùng orphanRemoval để khi xóa project thì ảnh/video đi kèm cũng bay màu luôn
-    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
     @Builder.Default
     private List<ProjectMedia> mediaList = new ArrayList<>();
 }

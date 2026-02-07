@@ -38,4 +38,8 @@ public class CertificateService {
                 .issueDate(cert.getIssueDate()).expirationDate(cert.getExpirationDate())
                 .credentialUrl(cert.getCredentialUrl()).imageUrl(cert.getImageUrl()).build();
     }
+
+    public long countAll() {
+        return certificateRepository.count();
+    }
 }
