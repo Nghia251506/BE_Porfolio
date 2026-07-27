@@ -21,6 +21,9 @@ public class JwtService {
     @Value("${jwt.expiration}")
     private long jwtExpiration;
 
+    @Value("${jwt.cookie.secure:true}")
+    private boolean cookieSecure;
+
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
@@ -42,19 +45,20 @@ public class JwtService {
     public ResponseCookie generateCookie(String token) {
         return ResponseCookie.from("jwt", token)
                 .httpOnly(true)
-                .secure(false) // true khi deploy HTTPS
+                .secure(cookieSecure)
                 .path("/")
                 .maxAge(jwtExpiration / 1000)
-                .sameSite("Lax")
+                .sameSite(cookieSecure ? "None" : "Lax")
                 .build();
     }
 
     public ResponseCookie generateLogoutCookie() {
         return ResponseCookie.from("jwt", "")
                 .httpOnly(true)
+                .secure(cookieSecure)
                 .path("/")
                 .maxAge(0)
-                .sameSite("Lax")
+                .sameSite(cookieSecure ? "None" : "Lax")
                 .build();
     }
 

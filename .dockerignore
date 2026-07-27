@@ -1,0 +1,15 @@
+.git
+.github
+.vscode
+.idea
+target
+*.md
+.env
+.env.*
+!.env.example
+fly.toml
+mvnw
+mvnw.cmd
+.mvn
+**/test/**
+**/*Tests.java
